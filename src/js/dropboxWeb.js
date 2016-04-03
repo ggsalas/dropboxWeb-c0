@@ -1,4 +1,5 @@
 const ACCESS_TOKEN = 'JavJ9PXXF9AAAAAAAAAANxVl8bfZOzTXUuxo3eyXoVKY14lXMl63HS0dpPVDyLzC'
+
 const DATA = {
   "path": "/IntroB_",
   "recursive": false,
@@ -19,12 +20,18 @@ $.ajax({
   success: (data) => {
     folder.append('<ol>');
     for(var i = 0; i < data.entries.length; i++){
-      var name = data.entries[i].name;
 
-      folder.append('<li class="item item-' + i + '">' + name + '</li>');
-      $('.item-' + i).click(function(){
-        console.log('ok ' + i);
-      });
+
+      (function(i){
+        var name = data.entries[i].name;
+
+        folder.append('<li class="item item-' + i + '">' + name + '</li>');
+        $('.item-' + i).click(function(){
+          console.log('ok ' + i);
+        });
+      })(i)
+
+
     }
     folder.append('</ol>');
   }
