@@ -6,6 +6,8 @@ const DATA = {
   "include_deleted": false
 }
 
+var folder = $('.folder');
+
 $.ajax({
   type: 'post',
   url: 'https://api.dropboxapi.com/2/files/list_folder',
@@ -14,12 +16,18 @@ $.ajax({
     "Authorization":"Bearer " + ACCESS_TOKEN,
     "Content-Type":"application/json"
   },
-  //success: (data) => console.log(data.entries[1]),
   success: (data) => {
+    folder.append('<ol>');
     for(var i = 0; i < data.entries.length; i++){
-      $('.folder').append(data.entries[i].name + '<br />');
+      var name = data.entries[i].name;
+
+      folder.append('<li class="item item-' + i + '">' + name + '</li>');
+      $('.item-' + i).click(function(){
+        console.log('ok ' + i);
+      });
     }
+    folder.append('</ol>');
   }
-  //error: (err) => console.log(err)
-})
+  //error: (err) => console.log(err),
+});
 
