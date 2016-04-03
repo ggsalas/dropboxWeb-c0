@@ -1,14 +1,17 @@
 {
   "name": "dropboxwebc0",
+  "private": true,
   "version": "1.0.0",
   "description": "Dropbox based website for C0 course",
   "main": "dropboxWeb.js",
-  "dependencies": {
-    "live-server": "^0.9.2"
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "0.9.2",
+    "gh-pages": "0.11.0"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "live-server src",
+    "doc": "gh-pages -d src"
   },
   "repository": {
     "type": "git",
