@@ -24,16 +24,33 @@ $.ajax({
 
       (function(i){
         var name = data.entries[i].name;
+        var id = data.entries[i].id;
+        var path = data.entries[i].path_lower;
 
         folder.append('<li class="item item-' + i + '">' + name + '</li>');
         $('.item-' + i).click(function(){
-          console.log('ok ' + i);
+          console.log('ok ' + i + ' ' + id);
+
+          // TODO: if is folder, open...
+
+          $.ajax({
+            type: 'post',
+            url: 'https://content.dropboxapi.com/2/files/download',
+            headers: {
+              "Authorization":"Bearer " + ACCESS_TOKEN,
+              "Dropbox-API-Arg":{
+                "path": path,
+              },
+            },
+         
+          });
         });
       })(i)
 
 
     }
     folder.append('</ol>');
+    console.log(data.entries);
   }
   //error: (err) => console.log(err),
 });
