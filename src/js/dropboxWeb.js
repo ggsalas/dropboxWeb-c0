@@ -64,6 +64,8 @@ $.ajax({
               },
               success: (data) => {
                 folder.html('');
+                folder.append('<li class="item">< Volver</li>');
+
                 for(var i = 0; i < data.entries.length; i++){
                     (function(i){
                       var name = data.entries[i].name;
