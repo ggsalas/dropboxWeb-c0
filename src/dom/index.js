@@ -18,11 +18,11 @@ export default class Dom {
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="#">Link</a></li>
-              <li class="dropdown">
+              <li class="Menú">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Otro link</a></li>
                   <li><a href="#">Something else here</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="#">Separated link</a></li>
@@ -34,10 +34,11 @@ export default class Dom {
       </nav>
 
     <div class="container">
-      <ol>${items.map(mapper).join('')}</ol>
+      <div>${items.map(mapper).join('')}</div>
     </div>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     `
   }
 }
