@@ -11,7 +11,6 @@ export default class DropBox {
     this._acces_token = access_token
   }
 
-  // List Folder
   entriesFor ({path} = {}) {
     return fetch('https://api.dropboxapi.com/2/files/list_folder',{
       method: 'POST',
@@ -25,7 +24,6 @@ export default class DropBox {
     .then(data => data.entries)
   }
 
-  // Download file
   downloadFor ({path} = {}) {
     fetch('https://content.dropboxapi.com/2/files/download', {
       method: 'POST',

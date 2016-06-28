@@ -29,9 +29,7 @@ export default class Browser {
           items: entries,
           root: this._root,
           mapper: (entry) => `
-            <div class="col-md-3" data-${entry['.tag']} data-path="${entry.path_lower}">
-            <img class="img-responsive" src="http://lorempixel.com/400/400/?` + Math.random() + ` " width="400" height="400" />
-            ${entry.name}</div>
+            <li data-${entry['.tag']} data-path="${entry.path_lower}">${entry.name}</li>
           `
         })
       })
