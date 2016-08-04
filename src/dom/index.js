@@ -1,7 +1,7 @@
 var i = 1;
 export default class Dom {
   orderListFrom({items, root, mapper} = {}) {
-    root.innerHTML += `${items.map(mapper).join}` 
+    root.innerHTML += `${items.map(mapper).join('')}`; 
 
     if (i % 2 == 0)
       root.innerHTML += `<div class="clearfix visible-xs-block"></div>` 

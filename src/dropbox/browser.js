@@ -31,7 +31,7 @@ export default class Browser {
             root: this._root,
             mapper: (entry) => `
               <div class="col-xs-6 col-sm-3 col-md-2" data-${entry['.tag']} data-path="${entry.path_lower}">
-                <img class="img-responsive" src="http://lorempixel.com/400/400/?` + Math.random() + ` " width="400" height="400" />
+                <img class="img-responsive" src="http://lorempixel.com/400/400/?${Math.random()}" width="400" height="400" />
                 ${entry.name}
               </div>
             `
