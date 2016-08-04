@@ -20,6 +20,7 @@ export default class DropBox {
         "Content-Type":"application/json"
       }
     })  
+    .then(root.innerHTML = '') //clear 
     .then(resp => resp.json())
     .then(data => data.entries)
   }
