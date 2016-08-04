@@ -1,6 +1,6 @@
-var i = 1;
+let i = 1;
 export default class Dom {
-  orderListFrom({items, root, mapper} = {}) {
+  orderListFrom({items, root, mapper, i} = {}) {
     root.innerHTML += `${items.map(mapper).join('')}`; 
 
     if (i % 2 == 0)
