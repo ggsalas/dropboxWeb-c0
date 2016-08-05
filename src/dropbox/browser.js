@@ -28,11 +28,11 @@ export default class Browser {
         entries.chunk(1).forEach((cells, index) => {
           new Dom().orderListFrom({
             items: cells,
-            index: index + 1,
+            index: index,
             root: this._root,
             mapper: (entry) => `
-              <div class="col-xs-6 col-sm-3 col-md-2" data-${entry['.tag']} data-path="${entry.path_lower}">
-                <img class="img-responsive" src="http://lorempixel.com/400/400/?${Math.random()}" width="400" height="400" />
+              <div class="col-xs-6 col-sm-3 col-md-2 list-item" data-${entry['.tag']} data-path="${entry.path_lower}">
+                <img class="img-responsive" data-path="${entry.path_lower}" src="http://lorempixel.com/400/400/?${Math.random()}" width="400" height="400" />
                 ${entry.name}
               </div>
             `
