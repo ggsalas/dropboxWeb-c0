@@ -25,9 +25,10 @@ export default class Browser {
       .entriesFor({path})
       .then(entries => {
         entries = [{name: 'Back', path_lower: pathReturn.join('/'), '.tag': 'folder'}].concat(entries)
-        entries.chunk(1).forEach(cells => {
+        entries.chunk(1).forEach((cells, index) => {
           new Dom().orderListFrom({
             items: cells,
+            index: index + 1,
             root: this._root,
             mapper: (entry) => `
               <div class="col-xs-6 col-sm-3 col-md-2" data-${entry['.tag']} data-path="${entry.path_lower}">
