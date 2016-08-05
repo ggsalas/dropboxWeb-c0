@@ -9,3 +9,115 @@
 .list-item:active{
   opacity: 0.6;
 }
+
+@import '../node_modules/bootstrap/less/variables.less';
+
+body{
+  position: relative;
+  padding-top: 50px;
+}
+a.anchor {
+    display: block;
+    position: relative;
+    top: -50px;
+    visibility: hidden;
+}
+//* Front
+.section-front{
+  background: url('http://lorempixel.com/800/600/');
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh; // TODO need fix padding top of body
+  margin-top: -50px;
+  position: relative;
+  background-position: center center;
+}
+.image-effect{
+  background-color: rgba(0,0,0,.3);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+.front-title{
+  position: absolute;
+  bottom: 15vh;
+  width: 100%;
+}
+.front-title{
+  color: #fff;
+  text-shadow: 0 1px 5px rgba(0,0,0,.8);
+}
+.front-title h1 small{
+  display: block;
+  margin-top: .5em;
+  color: #fff;
+  font-style: oblique;
+}
+
+//* Calendar
+.section-calendar{
+  background-color: @navbar-inverse-bg;
+  color: @navbar-inverse-brand-color;
+}
+
+.calendar-item{
+  padding: 3em 0;
+  min-height: 150px;
+  padding-top: 3em;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: calc(35px + 3em); 
+}
+
+.calendar-date{
+  clear: right;
+  display: table;
+  margin: 0 auto .5em auto;
+}
+
+//* Explorer
+.section-explorer{
+  padding: 3em 0 6em 0;
+  background-color: #fff;
+  min-height: 150px;
+}
+
+//* Footer
+.section-footer{
+  padding: 3em 0;
+  background-color: @navbar-inverse-bg;
+  color: @navbar-inverse-brand-color;
+}
+.footer-text{
+  line-height: 33px;
+}
+.footer-links{
+}
+
+
+//* Utility classes that would be added on Bootstrap 4
+.text-xs-left { text-align: left; }
+.text-xs-right { text-align: right; }
+.text-xs-center { text-align: center; }
+.text-xs-justify { text-align: justify; }
+
+@media (min-width: @screen-sm-min) {
+    .text-sm-left { text-align: left; }
+    .text-sm-right { text-align: right; }
+    .text-sm-center { text-align: center; }
+    .text-sm-justify { text-align: justify; }
+}
+
+@media (min-width: @screen-md-min) {
+    .text-md-left { text-align: left; }
+    .text-md-right { text-align: right; }
+    .text-md-center { text-align: center; }
+    .text-md-justify { text-align: justify; }
+}
+
+@media (min-width: @screen-lg-min) {
+    .text-lg-left { text-align: left; }
+    .text-lg-right { text-align: right; }
+    .text-lg-center { text-align: center; }
+    .text-lg-justify { text-align: justify; }
+}
