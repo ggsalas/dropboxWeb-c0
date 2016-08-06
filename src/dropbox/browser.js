@@ -24,15 +24,15 @@ export default class Browser {
     this._client
       .entriesFor({path})
       .then(entries => {
-        entries = [{name: 'Back', path_lower: pathReturn.join('/'), '.tag': 'folder'}].concat(entries)
+        entries = [{name: 'Atrás', path_lower: pathReturn.join('/'), '.tag': 'folder', back: 'back'}].concat(entries)
         entries.chunk(1).forEach((cells, index) => {
           new Dom().orderListFrom({
             items: cells,
             index: index,
             root: this._root,
             mapper: (entry) => `
-              <div class="col-xs-6 col-sm-3 col-md-2 list-item list-item-${entry['.tag']} ${entry.name}" data-${entry['.tag']} data-path="${entry.path_lower}">
-                <img class="img-responsive" data-path="${entry.path_lower}" src="http://lorempixel.com/400/400/?${Math.random()}" width="400" height="400" />
+              <div class="col-xs-6 col-sm-3 col-md-2 list-item list-item-${entry['.tag']} ${entry.back}" data-${entry['.tag']} data-path="${entry.path_lower}">
+                <i data-path="${entry.path_lower}" class="list-item-icon fa ${(entry['.tag'] == 'file') ? ('fa-file') : (entry.back == 'back') ? ('fa-chevron-circle-left'): ('fa-folder')} " aria-hidden="true"></i>
                 ${entry.name}
               </div>
             `
