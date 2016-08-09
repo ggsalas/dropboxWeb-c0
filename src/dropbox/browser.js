@@ -11,7 +11,10 @@ export default class Browser {
   }
 
   onClickFolder (evt) {
-    this.render({path:evt.target.dataset.path})
+    this.render({path:evt.target.dataset.path});
+    // $('#section-explorer').ScrollTo();
+    //var y = window.scrollY;
+    //window.scrollTo(0, 9000);
   }
 
   onClickFile (evt) {
