@@ -19,6 +19,7 @@ const GET_URL = 'https://www.googleapis.com/calendar/v3/calendars/d8miajfcbt84e4
 const CALENDAR_NODE = document.getElementById('section-calendar-root')
 
 fetch (GET_URL)
-.then(data => console.log(data))
-
-
+.then(resp => resp.json())
+.then(data => data.items.map(({description})  =>  description))
+.then(descriptions => descriptions.forEach(description => CALENDAR_NODE.innerHTML += description))
+//CALENDAR_NODE.innerHTML = 'aquí van los eventos';
