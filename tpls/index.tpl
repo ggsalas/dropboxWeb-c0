@@ -40,7 +40,7 @@
 
     <!-- Calendar -->
     <a class="anchor" id="section-calendar"></a>
-    <section class="section-calendar">
+    <section class="section-calendar" id="section-calendar-root">
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false" >
         <!-- Indicators -->
         <ol class="carousel-indicators">

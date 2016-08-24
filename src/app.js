@@ -15,8 +15,8 @@ browser.render({path: '/icb'})
 // Calendar Slider
 
 const CALENDAR_URL =  'https://calendar.google.com/calendar/ical/d8miajfcbt84e4on66bpcnj1r8%40group.calendar.google.com/public/basic.ics'
-const GET_URL = 'https://www.googleapis.com/calendar/v3/calendars/d8miajfcbt84e4on66bpcnj1r8%40group.calendar.google.com/events?maxResults=20&key=AIzaSyBDP5gGAWSQVHFRh7YDWpIWkCLzxOVPafU'
-const CALENDAR_NODE = document.getElementById('section-calendar')
+const GET_URL = 'https://www.googleapis.com/calendar/v3/calendars/d8miajfcbt84e4on66bpcnj1r8@group.calendar.google.com/events?key=AIzaSyAMj1Y8UDpwEmSFmTLm5XPXqpaW2KSyAkg'
+const CALENDAR_NODE = document.getElementById('section-calendar-root')
 
 fetch (GET_URL)
 .then(data => console.log(data))
