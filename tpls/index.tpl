@@ -43,33 +43,11 @@
     <section class="section-calendar" id="section-calendar-root">
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false" >
         <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <ol class="carousel-indicators" id="carousel-indicators-node">
         </ol>
 
       <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <div class=" calendar-item text-center">
-              <h3><span class="label label-default calendar-date">28 de julio</span>Clase 3: Materiales Cerámicos</h3>
-              <p>Descripción de la clase Lorem Ipsum es simplemente el data-slidexto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un imptraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
-              <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
-            </div>
-          </div>
-          <div class="item ">
-            <div class="container calendar-item text-center">
-              <h3><span class="label label-default calendar-date">28 de agosto</span>Clase 3: Materiales Cerámicos</h3>
-              <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
-            </div>
-          </div>         
-          <div class="item ">
-            <div class="container calendar-item text-center">
-              <h3><span class="label label-default calendar-date">28 de setiembre</span>Clase 3: Materiales Cerámicos</h3>
-              <p>Descripción de la clase Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un imptraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
-            </div>
-          </div>
+        <div class="carousel-inner" role="listbox" id="carousel-inner-node">
         </div>
 
         <!-- Controls --> 
