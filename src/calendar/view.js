@@ -7,7 +7,7 @@ export default class View {
         <ol class="carousel-indicators" id="carousel-indicators-node">
         </ol>
 
-      <!-- Wrapper for slides -->
+        <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox" id="carousel-inner-node">
         </div>
 
@@ -32,7 +32,8 @@ export default class View {
 
   event(item, i){
     this._indicators.innerHTML += `<li data-target="#carousel-example-generic" data-slide-to="0" class="${i == 0 ? 'active' : ''}"></li>`;
-    this._inner.innerHTML += `<div class="item ${i == 0 ? 'active' : ''}">
+    this._inner.innerHTML += `
+      <div class="item ${i == 0 ? 'active' : ''}">
         <div class="calendar-item text-center">
           <h3><span class="label label-default calendar-date">${this._start(item.start.dateTime)}</span>${item.summary}</h3>
           <p>${item.description}</p>

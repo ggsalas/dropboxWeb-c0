@@ -26,6 +26,7 @@
           <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="header-menu">
             <li role="presentation"><a href="#section-calendar">Calendario</a></li>
             <li role="presentation"><a href="#section-explorer">Documentos</a></li>
+            <li role="presentation"><a href="#section-chat">Chat</a></li>
           </ul>
         </div>
       </nav>
@@ -49,6 +50,23 @@
         <H2 class="text-center">Documentos de cátedra</h2>
         <div id="root" class="row"></div>
       </div>
+    </section>
+
+    <!-- Chat -->
+    <section class="section-chat" id="section-chat">
+      <div class="container">
+        <H2 class="text-center">Chat</h2>
+        <div id="disqus_thread"></div>
+        <script>
+          (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = '//dropboxweb.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>                                          
     </section>
 
     <!-- Footer -->
