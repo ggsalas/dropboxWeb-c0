@@ -12,6 +12,7 @@ export default class Browser {
 
   onClickFolder (evt) {
     this.render({path:evt.target.dataset.path});
+
     // $('#section-explorer').ScrollTo();
     //var y = window.scrollY;
     //window.scrollTo(0, 9000);
@@ -24,10 +25,11 @@ export default class Browser {
   render({path}) { // render({path: '/doc'})
     const pathReturn = path.split('/')
     pathReturn.pop()
+    console.log('estás en:' + path);
     this._client
       .entriesFor({path})
       .then(entries => {
-        entries = [{name: 'Atrás', path_lower: pathReturn.join('/'), '.tag': 'folder', back: 'back'}].concat(entries)
+        entries = path == '/icb' ? entries : [{name: 'Atrás', path_lower: pathReturn.join('/'), '.tag': 'folder', back: 'back'}].concat(entries)
         entries.chunk(1).forEach((cells, index) => {
           new Dom().orderListFrom({
             items: cells,
