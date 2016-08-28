@@ -3,9 +3,10 @@ import Dom from '../dom'
 import {Delegate} from 'dom-delegate'
 
 export default class Browser {
-  constructor ({access_token, root} = {}) {
+  constructor ({access_token, root, basePath} = {}) {
     this._client = new Client({access_token})
     this._root = root
+    this._basePath = basePath
     new Delegate(document.body).on('click', '[data-folder]', this.onClickFolder.bind(this))
     new Delegate(document.body).on('click', '[data-file]', this.onClickFile.bind(this))
   }
@@ -22,14 +23,14 @@ export default class Browser {
     this._client.downloadFor({path:evt.target.dataset.path})
   }
 
-  render({path}) { // render({path: '/doc'})
+  render({path, basePath}) { // render({path: '/doc'})
     const pathReturn = path.split('/')
     pathReturn.pop()
     console.log('estás en:' + path);
     this._client
       .entriesFor({path})
       .then(entries => {
-        entries = path == '/icb' ? entries : [{name: 'Atrás', path_lower: pathReturn.join('/'), '.tag': 'folder', back: 'back'}].concat(entries)
+        entries = path == this._basePath ? entries : [{name: 'Atrás', path_lower: pathReturn.join('/'), '.tag': 'folder', back: 'back'}].concat(entries)
         entries.chunk(1).forEach((cells, index) => {
           new Dom().orderListFrom({
             items: cells,

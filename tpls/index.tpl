@@ -43,11 +43,12 @@
     <a class="anchor" id="section-calendar"></a>
     <section class="section-calendar" id="section-calendar-root">
     </section>
+
     <!-- Explorer -->
     <a class="anchor" id="section-explorer"></a>    
-    <section class="section-explorer">
+    <section class="section-explorer" id="section-explorer-root">
       <div class="container">
-        <H2 class="text-center">Documentos de cátedra</h2>
+        <H2 class="text-center section-title">Documentos de cátedra</h2>
         <div id="root" class="row"></div>
       </div>
     </section>
@@ -55,7 +56,7 @@
     <!-- Chat -->
     <section class="section-chat" id="section-chat">
       <div class="container">
-        <H2 class="text-center">Chat</h2>
+        <H2 class="text-center section-title">Chat</h2>
         <div id="disqus_thread"></div>
         <script>
           (function() { // DON'T EDIT BELOW THIS LINE

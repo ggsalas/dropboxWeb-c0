@@ -1,14 +1,4 @@
-.list-item{
-  cursor: pointer;
-}
-.list-item img{
-}
-.list-item:hover{
-  opacity: 0.8;
-}
-.list-item:active{
-  opacity: 0.6;
-}
+
 
 @import '../node_modules/bootstrap/less/variables.less';
 body{
@@ -21,9 +11,20 @@ a.anchor {
     top: -50px;
     visibility: hidden;
 }
+
+//* General
+// TODO modify backgrount nav color 
+@color-dark : @navbar-inverse-bg;
+@color-light : @navbar-inverse-brand-color;
+
+.section-title{
+  color: @color-dark;
+  margin-bottom: 1em;
+}
+
 //* Front
 .section-front{
-  background: url('http://lorempixel.com/800/600/');
+  background: url('./img/fondo.jpg');
   background-size: cover;
   background-attachment: fixed;
   height: 100vh; // TODO need fix padding top of body
@@ -41,8 +42,6 @@ a.anchor {
   position: absolute;
   bottom: 15vh;
   width: 100%;
-}
-.front-title{
   color: #fff;
   text-shadow: 0 1px 5px rgba(0,0,0,.8);
 }
@@ -55,30 +54,49 @@ a.anchor {
 
 //* Calendar
 .section-calendar{
-  background-color: @navbar-inverse-bg;
-  color: @navbar-inverse-brand-color;
+  background-color: @color-dark;
+  color: @color-light;
 }
-
+.carousel.slide{
+  padding-bottom: 3em;
+}
+.carousel-indicators{
+  padding-bottom: 2em;
+}
 .calendar-item{
   padding: 3em 0;
   min-height: 150px;
   padding-top: 3em;
   padding-left: 15%;
   padding-right: 15%;
-  padding-bottom: calc(35px + 3em); 
+  padding-bottom: 3em; 
 }
-
 .calendar-date{
   clear: right;
   display: table;
   margin: 0 auto .5em auto;
+}
+.carousel-indicators li,
+.carousel-indicators .active{
+  margin: 0 0 0 1em;
 }
 
 //* Explorer
 .section-explorer{
   padding: 3em 0 6em 0;
   background-color: #fff;
-  min-height: 150px;
+  color: @color-dark;
+}
+.list-item{
+  cursor: pointer;
+}
+.list-item img{
+}
+.list-item:hover{
+  opacity: 0.8;
+}
+.list-item:active{
+  opacity: 0.6;
 }
 .list-item{
   text-align: center;
@@ -100,11 +118,21 @@ a.anchor {
 .list-item-file{
 }
 
+//* Chat
+.section-chat{
+  padding: 3em 0 6em 0;
+  background-color: @color-dark;
+}
+.section-chat .section-title{
+  color: @color-light;
+}
+
 //* Footer
 .section-footer{
   padding: 3em 0;
-  background-color: @navbar-inverse-bg;
-  color: @navbar-inverse-brand-color;
+  background-color: @color-dark;
+  color: @color-light;
+  border-top: 4px solid @color-light;
 }
 .footer-text{
   line-height: 33px;
@@ -125,14 +153,12 @@ a.anchor {
     .text-sm-center { text-align: center; }
     .text-sm-justify { text-align: justify; }
 }
-
 @media (min-width: @screen-md-min) {
     .text-md-left { text-align: left; }
     .text-md-right { text-align: right; }
     .text-md-center { text-align: center; }
     .text-md-justify { text-align: justify; }
 }
-
 @media (min-width: @screen-lg-min) {
     .text-lg-left { text-align: left; }
     .text-lg-right { text-align: right; }

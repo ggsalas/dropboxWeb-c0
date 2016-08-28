@@ -9,9 +9,10 @@ import View from './calendar/view'
 // Dropbox Browser
 const ACCESS_TOKEN = 'prnzgrtU38AAAAAAAAAAE-SiM917HjJloZISMGiouOPIkzaHhzShfUz92YhwGx8N'
 const ROOT_NODE = document.getElementById('root')
+const BASE_PATH = '/icb';
 
-const browser = new Browser({access_token: ACCESS_TOKEN, root: ROOT_NODE})
-browser.render({path: '/icb'})
+const browser = new Browser({access_token: ACCESS_TOKEN, root: ROOT_NODE, basePath: BASE_PATH})
+browser.render({path: BASE_PATH})
 
 // Google Calendar Slider
 const CALENDAR_ID =  'd8miajfcbt84e4on66bpcnj1r8@group.calendar.google.com'
