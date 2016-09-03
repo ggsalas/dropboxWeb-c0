@@ -6,9 +6,7 @@ const BASE_ENTRIES = {
   "include_deleted": false
 }
 
-      console.log('hola');
-
-export default class DropBox {
+export default class Client {
   constructor ({access_token} = {}) {
     this._acces_token = access_token
   }
@@ -29,7 +27,7 @@ export default class DropBox {
     .then(data => data.entries)
   }
 
-  downloadFor ({path} = {}) {
+  downloadFor ({path, name} = {}) {
     fetch('https://content.dropboxapi.com/2/files/download', {
       method: 'POST',
       headers: {
@@ -40,7 +38,7 @@ export default class DropBox {
     }).then(function(resp) {
       return resp.blob();
     }).then(function(blob) {
-      download(blob, path.split('/').pop())
+      download(blob, name)
     });
   }
 }

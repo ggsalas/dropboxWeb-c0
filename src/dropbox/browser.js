@@ -13,20 +13,16 @@ export default class Browser {
 
   onClickFolder (evt) {
     this.render({path:evt.target.dataset.path});
-
-    // $('#section-explorer').ScrollTo();
-    //var y = window.scrollY;
-    //window.scrollTo(0, 9000);
   }
 
   onClickFile (evt) {
-    this._client.downloadFor({path:evt.target.dataset.path})
+    this._client.downloadFor({path:evt.target.dataset.id, name:evt.target.dataset.name })
   }
 
   render({path, basePath}) { // render({path: '/doc'})
     const pathReturn = path.split('/')
     pathReturn.pop()
-    console.log('estás en: ' + path);
+    console.log('estás en: ' + path );
     this._client
       .entriesFor({path})
       .then(entries => {
@@ -37,8 +33,8 @@ export default class Browser {
             index: index,
             root: this._root,
             mapper: (entry) => `
-              <div class="col-xs-6 col-sm-3 col-md-2 list-item list-item-${entry['.tag']} ${entry.back}" data-${entry['.tag']} data-path="${entry.path_lower}">
-                <i data-path="${entry.path_lower}" class="list-item-icon fa ${(entry['.tag'] == 'file') ? ('fa-file') : (entry.back == 'back') ? ('fa-chevron-circle-left'): ('fa-folder')} " aria-hidden="true"></i>
+              <div class="col-xs-6 col-sm-3 col-md-2 list-item list-item-${entry['.tag']} ${entry.back}" data-${entry['.tag']} data-path="${entry.path_lower}" data-id="${entry.id}" data-name="${entry.name}">
+                <i data-path="${entry.path_lower}" data-id="${entry.id}" data-name="${entry.name}" class="list-item-icon fa ${(entry['.tag'] == 'file') ? ('fa-file') : (entry.back == 'back') ? ('fa-chevron-circle-left'): ('fa-folder')} " aria-hidden="true"></i>
                 ${entry.name}
               </div>
             `
