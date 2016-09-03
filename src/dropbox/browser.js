@@ -26,7 +26,7 @@ export default class Browser {
   render({path, basePath}) { // render({path: '/doc'})
     const pathReturn = path.split('/')
     pathReturn.pop()
-    console.log('estás en:' + path);
+    console.log('estás en: ' + path);
     this._client
       .entriesFor({path})
       .then(entries => {

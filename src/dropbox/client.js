@@ -6,6 +6,8 @@ const BASE_ENTRIES = {
   "include_deleted": false
 }
 
+      console.log('hola');
+
 export default class DropBox {
   constructor ({access_token} = {}) {
     this._acces_token = access_token

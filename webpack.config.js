@@ -21,5 +21,10 @@ config.plugins.push(
     'window.jQuery': 'jquery'
   })
 )
+
+if(process.env.NODE_ENV === 'production'){
+  config.output.publicPath = "http://ggsalas.github.io/dropboxWeb-c0/"
+}
+
 module.exports = config
 

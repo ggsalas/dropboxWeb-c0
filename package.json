@@ -28,9 +28,9 @@
   },
   "scripts": {
     "start": "hjs-dev-server",
-    "build": "npm run lint && webpack",
+    "build": "npm run lint && NODE_ENV=production webpack",
     "lint": "standard src",
-    "deploy": "gh-pages -d public"
+    "deploy": "npm run build && gh-pages -d public"
   },
   "repository": {
     "type": "git",
