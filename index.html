@@ -54,20 +54,8 @@
     </section>
 
     <!-- Chat -->
-    <section class="section-chat" id="section-chat">
-      <div class="container">
-        <H2 class="text-center section-title">Chat</h2>
-        <div id="disqus_thread"></div>
-        <script>
-          (function() { // DON'T EDIT BELOW THIS LINE
-              var d = document, s = d.createElement('script');
-              s.src = '//dropboxweb.disqus.com/embed.js';
-              s.setAttribute('data-timestamp', +new Date());
-              (d.head || d.body).appendChild(s);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-      </div>                                          
+    <a class="anchor" id="section-chat"></a>
+    <section class="section-chat" id="section-chat-root">
     </section>
 
     <!-- Footer -->
