@@ -34,7 +34,7 @@ export default class Browser {
             root: this._root,
             mapper: (entry) => `
               <div class="col-xs-6 col-sm-3 col-md-2 list-item list-item-${entry['.tag']} ${entry.back}" data-${entry['.tag']} data-path="${entry.path_lower}" data-id="${entry.id}" data-name="${entry.name}">
-                <i data-path="${entry.path_lower}" data-id="${entry.id}" data-name="${entry.name}" class="list-item-icon fa ${(entry['.tag'] == 'file') ? ('fa-file') : (entry.back == 'back') ? ('fa-chevron-circle-left'): ('fa-folder')} " aria-hidden="true"></i>
+                <i data-path="${entry.path_lower}" data-id="${entry.id}" data-name="${entry.name}" class="list-item-icon fa ${(entry['.tag'] == 'file') ? ('fa-cloud-download') : (entry.back == 'back') ? ('fa-chevron-circle-left'): ('fa-folder')} " aria-hidden="true"></i>
                 ${entry.name}
               </div>
             `
