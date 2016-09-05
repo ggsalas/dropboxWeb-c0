@@ -61,14 +61,14 @@
     <!-- Footer -->
     <section class="section-footer" id="section-footer">
       <div class="container ro::beforew">
-        <div class="col-sm-8 footer-text text-xs-center text-sm-left">
-          Cátedra de Introducción a las Construcciones B, de la FAUD UNMDP
+        <div class="col-sm-4 text-xs-center text-sm-left">
+          <a href="#" class="btn btn-default btn-footer"><i class="fa fa-facebook"></i></a>
+          <a href="#" class="btn btn-default btn-footer"><i class="fa fa-twitter"></i></a>
+          <a href="#" class="btn btn-default btn-footer"><i class="fa fa-linkedin"></i></a>
         </div>
-        <div class="col-sm-4 text-xs-center text-sm-right">
-          <a href="#" class="btn btn-default"><i class="fa fa-facebook"></i></a>
-          <a href="#" class="btn btn-default"><i class="fa fa-twitter"></i></a>
-          <a href="#" class="btn btn-default"><i class="fa fa-linkedin"></i></a>
-        </div>
+        <div class="col-sm-8 footer-text text-xs-center text-sm-right">
+          Realizado con <a href="https://github.com/ggsalas/dropboxWeb-c0"> DropboxWeb</a>
+        </div>      
       </div>
     </section>
 
