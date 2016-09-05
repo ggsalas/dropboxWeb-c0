@@ -21,7 +21,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">ICB</a>
+            <a class="navbar-brand" href="#" id="appShortTitle">ICB</a>
           </div>
           <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id="header-menu">
             <li role="presentation"><a href="#section-calendar">Calendario</a></li>
@@ -35,7 +35,7 @@
     <section class="section-front" id="section-front">
       <div class="image-effect"></div>
       <div class="container text-center front-title">
-          <h1>Introducción a las Construcciones B <small>Facultad de Arquitectura Urbanismo y Diseño de la Universidad Nacional de Mar del Plata</small></h1>
+          <h1 id="appTitle">Introducción a las Construcciones B <small>Facultad de Arquitectura Urbanismo y Diseño de la Universidad Nacional de Mar del Plata</small></h1>
       </div>
     </section>
 

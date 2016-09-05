@@ -7,6 +7,12 @@ import Calendar from './calendar/calendar'
 import View from './calendar/view'
 import Disqus from './disqus/disqus'
 import {config} from './config'
+import appInfo from './app/appInfo'
+
+/**
+ * Start AppInfo
+ */
+appInfo(config)
 
 /**
  * Dropbox Browser
