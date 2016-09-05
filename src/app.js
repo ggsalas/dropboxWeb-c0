@@ -34,4 +34,4 @@ new Calendar(CALENDAR_ID, new View(ROOT_ID)).render();
 const ROOT_DISQUS = 'section-chat-root';
 
 // comment this line to remove the chat
-//new Disqus(ROOT_DISQUS);
+new Disqus(ROOT_DISQUS);
