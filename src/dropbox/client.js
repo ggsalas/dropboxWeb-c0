@@ -20,9 +20,6 @@ export default class Client {
         "Content-Type":"application/json"
       }
     })  
-    .then(document.getElementById("section-explorer-root").style.height = '1500px') // to get inmobile scroll on clear
-    .then(root.innerHTML = '') //clear 
-    .then(document.getElementById("section-explorer-root").style.height = 'auto')
     .then(resp => resp.json())
     .then(data => data.entries)
   }

@@ -10,6 +10,7 @@ export default class Browser {
     this._client = new Client({access_token})
     this._root = root
     this._basePath = basePath
+    new Dom().structure({root})
     new Delegate(document.body).on('click', '[data-folder]', this.onClickFolder.bind(this))
     new Delegate(document.body).on('click', '[data-file]', this.onClickFile.bind(this))
   }
@@ -22,19 +23,20 @@ export default class Browser {
     this._client.downloadFor({path:evt.target.dataset.id, name:evt.target.dataset.name })
   }
 
-  render({path, basePath}) { // render({path: '/doc'})
+  render({path, basePath}) { 
     const pathReturn = path.split('/')
     pathReturn.pop()
     console.log('estás en: ' + path );
     this._client
       .entriesFor({path})
+      .then(new Dom().clear())
+      .then(new Dom().resize())
       .then(entries => {
         entries = path == this._basePath ? entries : [{name: 'Atrás', path_lower: pathReturn.join('/'), '.tag': 'folder', back: 'back'}].concat(entries)
         entries.chunk(1).forEach((cells, index) => {
           new Dom().orderListFrom({
             items: cells,
             index: index,
-            root: this._root,
             mapper: (entry) => `
               <div class="col-xs-6 col-sm-3 col-md-2 list-item list-item-${entry['.tag']} ${entry.back}" data-${entry['.tag']} data-path="${entry.path_lower}" data-id="${entry.id}" data-name="${entry.name}">
                 <i data-path="${entry.path_lower}" data-id="${entry.id}" data-name="${entry.name}" class="list-item-icon fa ${(entry['.tag'] == 'file') ? ('fa-cloud-download') : (entry.back == 'back') ? ('fa-chevron-circle-left'): ('fa-folder')} " aria-hidden="true"></i>

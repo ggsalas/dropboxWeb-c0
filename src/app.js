@@ -20,9 +20,9 @@ appInfo(config)
 const ACCESS_TOKEN = config.dropboxAccessToken
 const BASE_PATH = config.dropboxFolder
 const ROOT_NODE = document.getElementById('root')
-const browser = new Browser({access_token: ACCESS_TOKEN, root: ROOT_NODE, basePath: BASE_PATH})
 
-browser.render({path: BASE_PATH})
+ACCESS_TOKEN == '' ? '' : new Browser({access_token: ACCESS_TOKEN, root: ROOT_NODE, basePath: BASE_PATH}).render({path: BASE_PATH})
+
 
 /**
  * Google Calendar Slider
@@ -30,11 +30,11 @@ browser.render({path: BASE_PATH})
 const CALENDAR_ID =  config.googleCalendarId
 const ROOT_ID = 'section-calendar-root'
 
-CALENDAR_ID == '' ? '' : new Calendar(CALENDAR_ID, new View(ROOT_ID)).render();
+CALENDAR_ID == '' ? '' : new Calendar(CALENDAR_ID, new View(ROOT_ID)).render()
 
 /**
  * Disqus Chat
  */
 const ROOT_DISQUS = 'section-chat-root';
 
-config.displayDisqus == 'yes' ? new Disqus(ROOT_DISQUS) : '';
+config.displayDisqus == 'yes' ? new Disqus(ROOT_DISQUS) : ''

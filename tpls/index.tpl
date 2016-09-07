@@ -46,11 +46,7 @@
 
     <!-- Explorer -->
     <a class="anchor" id="section-explorer"></a>    
-    <section class="section-explorer" id="section-explorer-root">
-      <div class="container">
-        <H2 class="text-center section-title">Documentos de cátedra</h2>
-        <div id="root" class="row"></div>
-      </div>
+    <section class="section-explorer" id="root">
     </section>
 
     <!-- Chat -->
