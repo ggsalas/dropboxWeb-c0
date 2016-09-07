@@ -13,7 +13,7 @@ export default class Client {
 
   entriesFor ({path} = {}) {
     return fetch('https://api.dropboxapi.com/2/files/list_folder',{
-      method: 'POST',
+      method: 'POST', 
       body: JSON.stringify(Object.assign({}, BASE_ENTRIES, {path})),
       headers: {
         'Authorization':'Bearer ' + this._acces_token,

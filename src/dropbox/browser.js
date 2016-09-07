@@ -3,6 +3,9 @@ import Dom from '../dom'
 import {Delegate} from 'dom-delegate'
 
 export default class Browser {
+  static structure(id){
+    const structureRoot = document.getElementById(id)
+  }
   constructor ({access_token, root, basePath} = {}) {
     this._client = new Client({access_token})
     this._root = root

@@ -8,11 +8,11 @@ export const config = {
   appShortTitle: 'ICB',
   appDescription: 'Facultad de Arquitectura Urbanismo y Diseño de la Universidad Nacional de Mar del Plata',
   appEmail: 'sagardia@fibertel.com.ar',
-  appFacebookUrl: '#test',
-  appTwitterUrl: '#test',
-  appYoutubeUrl: '#',
-  appLinkedinUrl: '#',
-  appInstagramUrl: '#',
+  appFacebookUrl: '',
+  appTwitterUrl: '',
+  appYoutubeUrl: '',
+  appLinkedinUrl: '',
+  appInstagramUrl: '',
 
   // APP STYLES
   appImage: 'img/fondo.jpg', //TODO
