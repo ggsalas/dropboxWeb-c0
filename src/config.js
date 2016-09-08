@@ -3,6 +3,9 @@
  * Complete the options
  */
 export const config = {
+  // PASSWORD
+  appPass: 'hackeame',
+
   // APP TEXTS AND DATA. Complete blank ('') for none
   appTitle: 'Introducción a las Construcciones B',
   appShortTitle: 'ICB',
@@ -27,6 +30,6 @@ export const config = {
   googleCalendarId: 'd8miajfcbt84e4on66bpcnj1r8@group.calendar.google.com', // blank ('') for none
 
   // DISQUS
-  displayDisqus: 'yes', // yes or no
+  displayDisqus: 1, 
 }
 

@@ -21,20 +21,40 @@ const ACCESS_TOKEN = config.dropboxAccessToken
 const BASE_PATH = config.dropboxFolder
 const ROOT_NODE = document.getElementById('root')
 
-ACCESS_TOKEN == '' ? '' : new Browser({access_token: ACCESS_TOKEN, root: ROOT_NODE, basePath: BASE_PATH}).render({path: BASE_PATH})
-
-
 /**
  * Google Calendar Slider
  */
 const CALENDAR_ID =  config.googleCalendarId
 const ROOT_ID = 'section-calendar-root'
 
-CALENDAR_ID == '' ? '' : new Calendar(CALENDAR_ID, new View(ROOT_ID)).render()
-
 /**
  * Disqus Chat
  */
 const ROOT_DISQUS = 'section-chat-root';
 
-config.displayDisqus == 'yes' ? new Disqus(ROOT_DISQUS) : ''
+
+/**
+ * Password
+ */
+const loginPass = document.getElementById('inputPassword')
+const appPass = config.appPass
+
+function appStart(){
+    if (loginPass.value == appPass){
+    ACCESS_TOKEN == '' ? '' : new Browser({access_token: ACCESS_TOKEN, root: ROOT_NODE, basePath: BASE_PATH}).render({path: BASE_PATH})
+    CALENDAR_ID == '' ? '' : new Calendar(CALENDAR_ID, new View(ROOT_ID)).render()
+    config.displayDisqus == 1 ? new Disqus(ROOT_DISQUS) : ''
+  }
+}
+
+if (appPass == ''){
+  appStart()
+  document.getElementById('form-signin').innerHTML = '' //needs improovment
+}else{
+  document.getElementById('navbar').style.display =  'none' //needs improovment
+  $('#loginPass').click(() => { 
+    appStart()
+    document.getElementById('form-signin').innerHTML = '' //needs improovment
+    document.getElementById('navbar').style.display =  'block' //needs improovment
+  });
+}
