@@ -51,7 +51,7 @@ function appStart(){
 }
 
 // if the app not has password is an open site
-if (appPass == ''){
+if (APP_PASSWORD == ''){
   appStart() 
   document.getElementById('form-signin').innerHTML = '' //needs improovment
 }else{

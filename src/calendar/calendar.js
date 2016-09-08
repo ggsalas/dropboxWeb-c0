@@ -1,5 +1,5 @@
 export default class Calendar {
-  static get URL_TEMPLATE(){ return 'https://www.googleapis.com/calendar/v3/calendars/%ID%/events?maxResults=%MAX%&timeMin=%DATE%&key=AIzaSyAMj1Y8UDpwEmSFmTLm5XPXqpaW2KSyAkg';}
+  static get URL_TEMPLATE(){ return 'https://www.googleapis.com/calendar/v3/calendars/%ID%/events?maxResults=%MAX%&timeMin=%DATE%&orderBy=startTime&singleEvents=true&key=AIzaSyAMj1Y8UDpwEmSFmTLm5XPXqpaW2KSyAkg';}
 
   constructor(calendar_id, view){
     this._calendar_id = calendar_id;
@@ -15,7 +15,7 @@ export default class Calendar {
     fetch (url) 
     .then(resp => resp.json())
     .then(data => {
-      data.items.reverse().forEach(this._view.event.bind(this._view))
+      data.items.forEach(this._view.event.bind(this._view))
     })
   }
 }
