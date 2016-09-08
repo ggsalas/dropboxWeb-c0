@@ -32,23 +32,27 @@ const ROOT_ID = 'section-calendar-root'
  */
 const ROOT_DISQUS = 'section-chat-root';
 
-
 /**
  * Password
  */
-const loginPass = document.getElementById('inputPassword')
-const appPass = config.appPass
+const LOGIN_INPUT = document.getElementById('inputPassword')
+const APP_PASSWORD = config.appPass
+const CONTAINER_TITLE = document.getElementById('front-title-container')
 
 function appStart(){
-    if (loginPass.value == appPass){
+    if (LOGIN_INPUT.value == APP_PASSWORD){
     ACCESS_TOKEN == '' ? '' : new Browser({access_token: ACCESS_TOKEN, root: ROOT_NODE, basePath: BASE_PATH}).render({path: BASE_PATH})
     CALENDAR_ID == '' ? '' : new Calendar(CALENDAR_ID, new View(ROOT_ID)).render()
     config.displayDisqus == 1 ? new Disqus(ROOT_DISQUS) : ''
+    
+    CONTAINER_TITLE .style.top = 'inherit'
+    CONTAINER_TITLE .style.bottom = '15vh'
   }
 }
 
+// if the app not has password is an open site
 if (appPass == ''){
-  appStart()
+  appStart() 
   document.getElementById('form-signin').innerHTML = '' //needs improovment
 }else{
   document.getElementById('navbar').style.display =  'none' //needs improovment

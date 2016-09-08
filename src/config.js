@@ -3,7 +3,7 @@
  * Complete the options
  */
 export const config = {
-  // PASSWORD
+  // PASSWORD. Only for protected sites
   appPass: 'hackeame',
 
   // APP TEXTS AND DATA. Complete blank ('') for none
