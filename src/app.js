@@ -8,7 +8,6 @@ import View from './calendar/view'
 import Disqus from './disqus/disqus'
 import {config} from './config'
 import appInfo from './app/appInfo'
-import 'whatwg-fetch' //polyfill fetch
 
 /**
  * Start AppInfo
