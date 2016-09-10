@@ -45,8 +45,11 @@ function appStart(){
     CALENDAR_ID == '' ? '' : new Calendar(CALENDAR_ID, new View(ROOT_ID)).render()
     config.displayDisqus == 1 ? new Disqus(ROOT_DISQUS) : ''
     
-    CONTAINER_TITLE .style.top = 'inherit'
-    CONTAINER_TITLE .style.bottom = '15vh'
+    // Styles without access form
+    CONTAINER_TITLE.style.top = 'inherit'
+    CONTAINER_TITLE.style.bottom = '15vh'
+    CONTAINER_TITLE.style.position = 'absolute'
+    document.getElementById('image-blur').style.display = 'none'
   }
 }
 

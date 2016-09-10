@@ -33,22 +33,24 @@
     </div>
     <!-- Front -->
     <section class="section-front" id="section-front">
-      <div class="image-effect"></div>
-      <div class="container text-center front-title" id="front-title-container">
-          <h1 id="appTitle">Introducción a las Construcciones B <small>Facultad de Arquitectura Urbanismo y Diseño de la Universidad Nacional de Mar del Plata</small></h1>
-          <div id="form-signin">
-            <form class="form-signin col-md-6 col-md-offset-3" >
-              <h2 class="form-signin-heading">Ingresar</h2>
-              <label for="inputPassword" class="sr-only">Password</label>
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="remember-me"> recordar 
-                </label>
-              </div>
-              <button class="btn btn-lg btn-primary btn-block" type="button" id="loginPass">Ingresar</button>
-            </form>
-          </div>
+      <div id="image-blur"></div>
+      <div class="image-effect">
+        <div class="container text-center front-title" id="front-title-container">
+            <h1 id="appTitle">Introducción a las Construcciones B <small>Facultad de Arquitectura Urbanismo y Diseño de la Universidad Nacional de Mar del Plata</small></h1>
+            <div id="form-signin">
+              <form class="form-signin col-md-6 col-md-offset-3" >
+                <h2 class="form-signin-heading">Ingresar</h2>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="remember-me"> recordar 
+                  </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="button" id="loginPass">Ingresar</button>
+              </form>
+            </div>
+        </div>
       </div>
     </section>
 
