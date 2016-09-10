@@ -41,7 +41,7 @@ const APP_PASSWORD = config.appPass
 const CONTAINER_TITLE = document.getElementById('front-title-container')
 
 function appStart(){
-    if (LOGIN_INPUT.value == APP_PASSWORD){
+  if (LOGIN_INPUT.value == APP_PASSWORD){
     ACCESS_TOKEN == '' ? '' : new Browser({access_token: ACCESS_TOKEN, root: ROOT_NODE, basePath: BASE_PATH}).render({path: BASE_PATH})
     CALENDAR_ID == '' ? '' : new Calendar(CALENDAR_ID, new View(ROOT_ID)).render()
     config.displayDisqus == 1 ? new Disqus(ROOT_DISQUS) : ''
@@ -50,7 +50,11 @@ function appStart(){
     CONTAINER_TITLE.style.top = 'inherit'
     CONTAINER_TITLE.style.bottom = '15vh'
     CONTAINER_TITLE.style.position = 'absolute'
-    document.getElementById('image-blur').style.display = 'none'
+    document.getElementById('image-blur').style.animationName = 'dissipate'
+    document.getElementById('navbar').style.animationName = 'appear'
+    document.getElementById('navbar').style.animationDuration = '3s'
+    document.getElementById('image-blur').style.animationDuration = '3s'
+    setTimeout(() => {document.getElementById('image-blur').style.display = 'none'},3000)
   }
 }
 
