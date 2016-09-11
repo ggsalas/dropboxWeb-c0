@@ -46,6 +46,8 @@ function appStart(){
     config.displayDisqus == 1 ? new Disqus(ROOT_DISQUS) : ''
     
     // Styles without access form
+    document.getElementById('form-signin').innerHTML = '' //needs improovment
+    document.getElementById('navbar').style.display =  'block' //needs improovment
     CONTAINER_TITLE.style.top = 'inherit'
     CONTAINER_TITLE.style.bottom = '15vh'
     CONTAINER_TITLE.style.position = 'absolute'
@@ -54,6 +56,8 @@ function appStart(){
     document.getElementById('navbar').style.animationDuration = '3s'
     document.getElementById('image-blur').style.animationDuration = '3s'
     setTimeout(() => {document.getElementById('image-blur').style.display = 'none'},3000)
+  }else{
+    document.getElementById('form-signin-error').innerText = 'Contraseña incorrecta'
   }
 }
 
@@ -63,9 +67,8 @@ if (APP_PASSWORD == ''){
   document.getElementById('form-signin').innerHTML = '' //needs improovment
 }else{
   document.getElementById('navbar').style.display =  'none' //needs improovment
-  $('#loginPass').click(() => { 
+  document.getElementById('form-signin').addEventListener('submit',(e) => { 
     appStart()
-    document.getElementById('form-signin').innerHTML = '' //needs improovment
-    document.getElementById('navbar').style.display =  'block' //needs improovment
+    e.preventDefault()
   });
 }
