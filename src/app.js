@@ -38,12 +38,24 @@ const ROOT_DISQUS = 'section-chat-root';
 const LOGIN_INPUT = document.getElementById('inputPassword')
 const APP_PASSWORD = config.appPass
 const CONTAINER_TITLE = document.getElementById('front-title-container')
-
 const NAVBAR = document.getElementById('navbar')
 const FORM_SIGNIN = document.getElementById('form-signin')
 const IMAGE_BLUR = document.getElementById('image-blur')
 const HELP_BLOCK_PASSWORD = document.getElementById('helpBlockPassword')
 const INPUT_PASSWORD_GROUP = document.getElementById('inputPasswordGroup')
+
+// If the app not has password is an open site (no need login)
+if (APP_PASSWORD == ''){
+  appStart() 
+  FORM_SIGNIN.innerHTML = '' 
+}else{
+  // If the app not have a password must display login form and hide navbar
+  NAVBAR.style.display =  'none' 
+  FORM_SIGNIN.addEventListener('submit',(e) => { 
+    appStart()
+    e.preventDefault()
+  });
+}
 
 function appStart(){
   if (LOGIN_INPUT.value == APP_PASSWORD){
@@ -52,8 +64,8 @@ function appStart(){
     config.displayDisqus == 1 ? new Disqus(ROOT_DISQUS) : ''
     
     // Styles without access form
-    FORM_SIGNIN.innerHTML = '' //needs improovment
-    NAVBAR.style.display =  'block' //needs improovment
+    FORM_SIGNIN.innerHTML = '' 
+    NAVBAR.style.display =  'block' 
     CONTAINER_TITLE.style.top = 'inherit'
     CONTAINER_TITLE.style.bottom = '15vh'
     CONTAINER_TITLE.style.position = 'absolute'
@@ -68,19 +80,11 @@ function appStart(){
   }
 }
 
+// Form clear
 LOGIN_INPUT.addEventListener('focus', () => {
   HELP_BLOCK_PASSWORD.innerText = ''
   INPUT_PASSWORD_GROUP.removeAttribute('class', 'has-error')
 });
 
-// if the app not has password is an open site
-if (APP_PASSWORD == ''){
-  appStart() 
-  FORM_SIGNIN.innerHTML = '' //needs improovment
-}else{
-  NAVBAR.style.display =  'none' //needs improovment
-  FORM_SIGNIN.addEventListener('submit',(e) => { 
-    appStart()
-    e.preventDefault()
-  });
-}
+
+
