@@ -38,14 +38,16 @@
             <div id="form-signin">
               <form class="form-signin col-md-6 col-md-offset-3" id="form-signin">
                 <h2 class="form-signin-heading">Ingresar</h2>
-                <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                <div class="form-group" id="inputPasswordGroup">
+                  <label for="inputPassword" class="sr-only">Password</label>
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                  <span id="helpBlockPassword" class="help-block"></span>
+                </div>
                 <div class="checkbox">
                   <label>
                     <input type="checkbox" value="remember-me"> recordar 
                   </label>
                 </div>
-                <div id="form-signin-error"></div>
                 <button class="btn btn-lg btn-primary btn-block" type="submit" id="loginPass">Ingresar</button>
               </form>
             </div>
