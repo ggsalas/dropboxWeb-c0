@@ -8,20 +8,21 @@ export default class Dom {
     `;
   }
   clear(){
+    console.log('clear')
     this._rootElements.style.height = '1500px'
     this._rootElements.innerHTML = ''
   }
   resize(){
-    this._rootElements.style.height = 'auto' // at this time is not working
+    console.log('resize')
+    this._rootElements.style.height = 'auto'
   }
   constructor (){
     this._rootElements = document.getElementById("rootElements")    
   }
-
   orderListFrom({items, index, mapper} = {}) {
+    console.log('list')
     this._rootElements.innerHTML += `${items.map(mapper).join('')}${cuts(index)}`; 
   }
-
 }
 
 function  cuts(index){

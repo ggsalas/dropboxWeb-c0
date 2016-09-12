@@ -25,12 +25,15 @@ export default class Browser {
 
   render({path, basePath}) { 
     const pathReturn = path.split('/')
+    const dom = new Dom()
     pathReturn.pop()
     console.log('estás en: ' + path );
     this._client
       .entriesFor({path})
-      .then(new Dom().clear())
-      .then(new Dom().resize())
+      .then(entries => {
+        dom.clear()
+        return entries
+      })
       .then(entries => {
         entries = path == this._basePath ? entries : [{name: 'Atrás', path_lower: pathReturn.join('/'), '.tag': 'folder', back: 'back'}].concat(entries)
         entries.chunk(1).forEach((cells, index) => {
@@ -45,9 +48,10 @@ export default class Browser {
             `
           })
         })
+        //return Promise.resolve()
       })
+      .then(dom.resize.bind(dom))
   }
-
 }
 
 /** 
