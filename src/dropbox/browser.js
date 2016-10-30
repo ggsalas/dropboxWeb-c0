@@ -20,7 +20,8 @@ export default class Browser {
   }
 
   onClickFile (evt) {
-    this._client.downloadFor({path:evt.target.dataset.id, name:evt.target.dataset.name })
+    this._client.linkFor({path:evt.target.dataset.id, name:evt.target.dataset.name })
+    //this._client.downloadFor({path:evt.target.dataset.id, name:evt.target.dataset.name })
   }
 
   render({path, basePath}) { 

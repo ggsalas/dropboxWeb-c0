@@ -4,7 +4,7 @@
  */
 export const config = {
   // PASSWORD. Only for protected sites
-  appPass: 'hackeame',
+  appPass: '',
 
   // APP TEXTS AND DATA. Complete blank ('') for none
   appTitle: 'Introducción a las Construcciones B',

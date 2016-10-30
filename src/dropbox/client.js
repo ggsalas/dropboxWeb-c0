@@ -1,9 +1,9 @@
 import download from 'downloadjs'
 
 const BASE_ENTRIES = {
-  "recursive": false,
-  "include_media_info": false,
-  "include_deleted": false
+  'recursive': false,
+  'include_media_info': false,
+  'include_deleted': false
 }
 
 export default class Client {
@@ -17,11 +17,24 @@ export default class Client {
       body: JSON.stringify(Object.assign({}, BASE_ENTRIES, {path})),
       headers: {
         'Authorization':'Bearer ' + this._acces_token,
-        "Content-Type":"application/json"
+        'Content-Type':'application/json'
       }
     })  
     .then(resp => resp.json())
     .then(data => data.entries)
+  }
+      
+  linkFor ({path} = {}) {
+    fetch('https://api.dropboxapi.com/2/files/get_temporary_link', {
+      method: 'POST',
+      headers: {
+        'Authorization':'Bearer ' + this._acces_token,
+        'Content-Type':'application/json',
+      },
+      body: JSON.stringify({path})
+    })
+    .then(resp => resp.json())
+    .then(data => console.log(data.link))
   }
 
   downloadFor ({path, name} = {}) {
