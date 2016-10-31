@@ -25,7 +25,7 @@ export default class Client {
   }
       
   linkFor ({path} = {}) {
-    fetch('https://api.dropboxapi.com/2/files/get_temporary_link', {
+    return fetch('https://api.dropboxapi.com/2/files/get_temporary_link', {
       method: 'POST',
       headers: {
         'Authorization':'Bearer ' + this._acces_token,
@@ -34,21 +34,6 @@ export default class Client {
       body: JSON.stringify({path})
     })
     .then(resp => resp.json())
-    .then(data => console.log(data.link))
-  }
-
-  downloadFor ({path, name} = {}) {
-    fetch('https://content.dropboxapi.com/2/files/download', {
-      method: 'POST',
-      headers: {
-        'Authorization':'Bearer ' + this._acces_token,
-        'Content-Type': '',
-        'Dropbox-API-Arg': JSON.stringify({path})
-      }
-    }).then(function(resp) {
-      return resp.blob();
-    }).then(function(blob) {
-      download(blob, name)
-    });
+    .then(data => data.link)
   }
 }

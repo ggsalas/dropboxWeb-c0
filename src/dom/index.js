@@ -3,6 +3,8 @@ export default class Dom {
     root.innerHTML = `
       <div class="container">
         <H2 class="text-center section-title">Documentos de cátedra</h2>
+        <div id="filePreview" class="hidden">
+        </div>
         <div id="rootElements" class="row"></div>
       </div>
     `;

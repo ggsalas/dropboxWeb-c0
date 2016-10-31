@@ -13,6 +13,7 @@ export default class Browser {
     new Dom().structure({root})
     new Delegate(document.body).on('click', '[data-folder]', this.onClickFolder.bind(this))
     new Delegate(document.body).on('click', '[data-file]', this.onClickFile.bind(this))
+    new Delegate(document.body).on('click', '#filePreview-close', this.onClickFileClose)
   }
 
   onClickFolder (evt) {
@@ -20,8 +21,26 @@ export default class Browser {
   }
 
   onClickFile (evt) {
-    this._client.linkFor({path:evt.target.dataset.id, name:evt.target.dataset.name })
-    //this._client.downloadFor({path:evt.target.dataset.id, name:evt.target.dataset.name })
+    const filePreviewRoot = document.getElementById('filePreview')
+    filePreviewRoot.className = 'visible'
+
+    this._client.linkFor({path:evt.target.dataset.id})
+      .then( link => {return link} )
+      .then( link => {
+        filePreviewRoot.innerHTML = `<div class="filePreview-actions">
+            <a href="${link}" class="btn btn-default" aria-label="download">
+              <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Descargar
+            </a>
+            <button type="button" id="filePreview-close" class="btn btn-primary btn-md">
+              <span  class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+          </div>
+          <iframe src="https://docs.google.com/viewer?url=${link}&embedded=true"></iframe>`
+      })
+  }
+  
+  onClickFileClose (evt) {
+    document.getElementById('filePreview').className = 'hidden'
   }
 
   render({path, basePath}) { 
